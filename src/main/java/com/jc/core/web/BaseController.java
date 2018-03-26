@@ -129,8 +129,9 @@ public class BaseController {
     public void InitBinder(HttpServletRequest request, ServletRequestDataBinder binder) {
         //去空格
         binder.registerCustomEditor(String.class, new PropertyEditorSupport() {
+            @Override
             public void setAsText(String text) throws IllegalArgumentException {
-                setValue(text == null ? text : text.trim());
+                setValue(text == null ? null : text.trim());
             }
         });
         // String类型转换，将所有传递进来的String进行HTML编码，防止XSS攻击
@@ -165,7 +166,7 @@ public class BaseController {
     @ExceptionHandler({Exception.class})
     @ResponseBody
     public Object baseException(Exception e, HttpServletRequest request, HttpServletResponse response) {
-        Map<String, Object> resultMap = new HashMap<String, Object>();
+        Map<String, Object> resultMap = new HashMap<>();
 
         //shiro权限异常
         if (e.getCause() != null && e.getCause().toString().startsWith(AuthorizationException.class.getName())) {

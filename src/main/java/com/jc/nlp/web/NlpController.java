@@ -27,6 +27,7 @@ public class NlpController extends BaseController {
     @RequestMapping("/test")
     @ResponseBody
     public String test() {
+        logger.info("12312331");
         List<AddrCoor> list = addrCoorService.findList(new AddrCoor());
         return "";
     }
