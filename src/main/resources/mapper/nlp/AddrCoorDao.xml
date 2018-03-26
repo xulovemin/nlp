@@ -6,7 +6,7 @@
 
     <select id="findList" parameterType="com.jc.nlp.domain.AddrCoor"
             resultType="com.jc.nlp.domain.AddrCoor">
-		SELECT * FROM geo_addr_coor
+		SELECT * FROM geo_addr_coor t order by t.id
 	</select>
 
 </mapper>
