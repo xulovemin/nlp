@@ -13,12 +13,6 @@
 <div class="col-lg-12">
     <form class="form-horizontal" id="form" style="margin-top: 20px;">
         <div class="form-group">
-            <label class="col-lg-2 control-label">文本内容</label>
-            <div class="col-lg-10">
-                <textarea class="form-control" name="text"></textarea>
-            </div>
-        </div>
-        <div class="form-group">
             <div class="col-lg-2 pull-right">
                 <button class="btn btn-lg btn-block btn-primary" type="button" onclick="_submit();">提 交</button>
             </div>
