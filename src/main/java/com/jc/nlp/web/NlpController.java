@@ -2,8 +2,8 @@ package com.jc.nlp.web;
 
 import com.jc.common.utils.StringUtils;
 import com.jc.core.web.BaseController;
-import com.jc.nlp.domain.AddrCoor;
-import com.jc.nlp.service.AddrCoorService;
+import com.jc.nlp.domain.Right;
+import com.jc.nlp.service.RightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 public class NlpController extends BaseController {
 
     @Autowired
-    private AddrCoorService addrCoorService;
+    private RightService rightService;
 
     @RequestMapping("/form")
     public String form() {
@@ -28,7 +28,7 @@ public class NlpController extends BaseController {
     @ResponseBody
     public String test() {
         logger.info("12312331");
-        List<AddrCoor> list = addrCoorService.findList(new AddrCoor());
+        List<Right> list = rightService.findList(new Right());
         return "";
     }
 

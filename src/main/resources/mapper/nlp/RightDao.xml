@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jc.nlp.dao.RightDao">
+
+    <select id="findList" parameterType="com.jc.nlp.domain.Right"
+            resultType="com.jc.nlp.domain.Right">
+		SELECT t.ID id, t.SET_BASIS set_basis, t.SET_BASIS_SUMMARY set_basis_summary FROM jcy_right_list t
+	</select>
+
+</mapper>
