@@ -30,11 +30,16 @@ public class NlpController extends BaseController {
     public String test() {
         List<Right> list = rightService.findList(new Right());
         List<List<Map<String, Object>>> lists = new ArrayList<>();
+        List<Right> listnone = new ArrayList<>();
         for (Right right : list) {
-            List<Map<String, Object>> listMap = TestTx.getFlft(right.getSet_basis(), right.getSet_basis_summary());
+            List<Map<String, Object>> listMap = LawUtil.getFlft(right.getSet_basis(), right.getSet_basis_summary());
+            if (listMap.size() == 0) {
+                listnone.add(right);
+            }
             lists.add(listMap);
         }
-        logger.info(JsonUtil.java2Json(lists));
+        logger.info(String.valueOf(listnone.size()));
+        logger.info(JsonUtil.java2Json(listnone));
         return "";
     }
 
