@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jc.nlp.dao.GeoRegionsDao">
+
+    <select id="queryAllGeo" resultType="com.jc.nlp.domain.GeoRegions">
+        SELECT g.code, g.name, (SELECT GROUP_CONCAT(a.abbr) FROM geo_abbrs a WHERE a.code = g.code) abbr FROM geo_regions g ORDER BY g.code
+    </select>
+
+</mapper>

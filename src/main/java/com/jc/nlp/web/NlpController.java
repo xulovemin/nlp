@@ -5,6 +5,7 @@ import com.jc.core.web.BaseController;
 import com.jc.nlp.domain.Right;
 import com.jc.nlp.service.RightService;
 import com.jc.nlp.util.JsonUtil;
+import com.jc.nlp.util.RegionUtiil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -83,6 +84,12 @@ public class NlpController extends BaseController {
         resultMap.put("state", "1");
         resultMap.put("list", map);
         return resultMap;
+    }
+
+    @RequestMapping("/regionCode")
+    @ResponseBody
+    public String regionCode(String content) {
+        return RegionUtiil.getRegionCode(content);
     }
 
 }
