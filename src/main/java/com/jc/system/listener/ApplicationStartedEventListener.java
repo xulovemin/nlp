@@ -14,7 +14,9 @@ public class ApplicationStartedEventListener implements ApplicationListener<Appl
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     public void onApplicationEvent(final ApplicationReadyEvent event) {
-        logger.info("init");
+        logger.info("info");
+        logger.warn("warn");
+        logger.error("error");
         CacheInit.initAllRegions();
         CacheInit.initProvinceCache();
         CacheInit.initCityCache();
