@@ -8,4 +8,5 @@ import org.springframework.transaction.annotation.Transactional;
 public abstract class BaseService {
 
 	protected Logger logger = LoggerFactory.getLogger(getClass());
+
 }
